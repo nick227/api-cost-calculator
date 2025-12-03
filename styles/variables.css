@@ -1,0 +1,139 @@
+:root {
+  /* Colors - Base */
+  --bg: #0b0c10;
+  --bg-panel: #111218;
+  --bg-panel-alt: #151720;
+  --bg-panel-sidebar: rgba(12, 12, 18, 0.92);
+  --bg-dark: #0e0e16;
+  --border-subtle: #262734;
+  --border-solid: rgba(38, 39, 52, 0.9);
+  --border-light: rgba(38, 39, 52, 0.4);
+  --border-hover: rgba(38, 39, 52, 0.5);
+  --border-dashed: rgba(160, 174, 192, 0.5);
+  
+  /* Colors - Input/Interactive */
+  --bg-input: rgba(15, 16, 24, 0.9);
+  --bg-input-hover: rgba(20, 22, 32, 0.95);
+  --bg-input-focus: rgba(20, 22, 32, 0.96);
+  --bg-hover: rgba(24, 26, 40, 0.95);
+  --bg-hover-light: rgba(31, 36, 56, 0.7);
+  
+  /* Colors - Table */
+  --bg-thead: rgba(15, 17, 26, 0.95);
+  --bg-tbody: rgba(14, 14, 22, 0.95);
+  --bg-tbody-alt: rgba(14, 14, 22, 0.98);
+  --bg-card: rgba(14, 16, 26, 0.95);
+  --bg-section: rgba(11, 12, 18, 0.95);
+  
+  /* Colors - Accent */
+  --accent: #4fd1c5;
+  --accent-soft: rgba(79, 209, 197, 0.12);
+  --accent-badge: rgba(79, 209, 197, 0.2);
+  --accent-border-light: rgba(79, 209, 197, 0.25);
+  --accent-medium: rgba(79, 209, 197, 0.3);
+  --accent-border: rgba(79, 209, 197, 0.4);
+  --accent-border-hover: rgba(79, 209, 197, 0.5);
+  --accent-strong: rgba(79, 209, 197, 0.6);
+  
+  /* Colors - Chip/Badge */
+  --bg-chip: rgba(69, 81, 137, 0.35);
+  --bg-chip-hover: rgba(69, 81, 137, 0.5);
+  
+  /* Colors - Text */
+  --text-main: #f7fafc;
+  --text-soft: #a0aec0;
+  --danger: #f56565;
+  
+  /* Spacing Scale */
+  --space-1: 1px;
+  --space-2xs: 2px;
+  --space-xs: 4px;
+  --space-sm: 6px;
+  --space-md: 8px;
+  --space-md-plus: 9px;
+  --space-lg: 10px;
+  --space-lg-plus: 11px;
+  --space-xl: 12px;
+  --space-2xl: 14px;
+  --space-3xl: 16px;
+  --space-4xl: 18px;
+  --space-5xl: 20px;
+  
+  /* Component Sizes */
+  --size-dot: 7px;
+  --size-icon-sm: 18px;
+  --size-icon-md: 20px;
+  --size-btn-sm: 28px;
+  --size-pill-min: 60px;
+  --size-pill: 80px;
+  
+  /* Padding Combos (common patterns) */
+  --pad-input: 7px 9px;
+  --pad-tight: 3px 2px;
+  --pad-btn: 7px var(--space-lg);
+  
+  /* Font Size Scale */
+  --font-2xs: 0.65rem;
+  --font-xs: 0.7rem;
+  --font-icon: 11px;
+  --font-sm: 0.72rem;
+  --font-note: 0.74rem;
+  --font-base: 0.75rem;
+  --font-md: 0.78rem;
+  --font-lg: 0.8rem;
+  --font-xl: 0.82rem;
+  --font-2xl: 0.85rem;
+  --font-3xl: 0.86rem;
+  --font-4xl: 0.9rem;
+  --font-5xl: 0.95rem;
+  --font-6xl: 1.15rem;
+  --font-7xl: 1.4rem;
+  
+  /* Border Radius Scale */
+  --radius-sm: 8px;
+  --radius-md: 9px;
+  --radius-base: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 18px;
+  --radius-full: 999px;
+  
+  /* Shadows */
+  --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 8px 18px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 12px rgba(79, 209, 197, 0.4);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-focus: 0 0 0 1px var(--accent-soft);
+  
+  /* Transforms */
+  --transform-lift: translateY(-1px);
+  --transform-lift-sm: scale(1.15);
+  --transform-shrink: scale(0.95);
+  
+  /* Button/Icon Backgrounds */
+  --bg-icon: rgba(79, 209, 197, 0.1);
+  --bg-hint: rgba(32, 40, 68, 0.7);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease-out;
+  --transition-all: all 0.2s ease;
+  
+  /* Typography */
+  --font-ui: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  
+  /* Letter Spacing */
+  --letter-tight: 0.05em;
+  --letter-base: 0.06em;
+  --letter-wide: 0.07em;
+  --letter-wider: 0.08em;
+  
+  /* Breakpoints (for reference in media queries) */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 920px;
+  --bp-wide: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+

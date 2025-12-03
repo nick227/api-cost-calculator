@@ -1,0 +1,46 @@
+/* Inherits flex-column pattern from leftPanel.css */
+.quality-option {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+.quality-label {
+  font-size: var(--font-base);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-tight);
+  color: var(--text-soft);
+  font-weight: 500;
+}
+
+/* Shares input styling pattern with number-input */
+.quality-select {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-input);
+  color: var(--text-main);
+  font-size: var(--font-2xl);
+  outline: none;
+  cursor: pointer;
+  transition: border var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.quality-select:hover {
+  background: var(--bg-input-hover);
+  border-color: var(--accent-medium);
+}
+
+.quality-select:focus {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-focus);
+  background: var(--bg-input-focus);
+}
+
+.quality-select option {
+  background: #1a1d2e;
+  color: var(--text-main);
+  padding: var(--space-md);
+}
+

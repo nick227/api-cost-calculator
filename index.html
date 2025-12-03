@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Cost Calculator</title>
+  <meta name="description" content="Calculate the cost of using Generative AI APIs.">
+  <meta name="keywords" content="Generative AI, API Cost Calculator, AI Cost Calculator, AI Cost Planner">
+  <meta name="author" content="nrios">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/leftPanel.css" />
+  <link rel="stylesheet" href="styles/rightPanel.css" />
+  <link rel="stylesheet" href="styles/table.css" />
+  <link rel="stylesheet" href="styles/qualitySettings.css" />
+  <link rel="stylesheet" href="styles/providerInfo.css" />
+  <link rel="stylesheet" href="styles/modalBase.css" />
+  <link rel="stylesheet" href="styles/modalContent.css" />
+  <link rel="stylesheet" href="styles/modalComponents.css" />
+  <link rel="stylesheet" href="styles/modalAnimations.css" />
+  <link rel="stylesheet" href="styles/codeBlock.css" />
+  <link rel="stylesheet" href="styles/mobile.css" />
+</head>
+<body>
+<div class="app-root">
+  <aside class="left-panel">
+    <div>
+      <div class="panel-title">Generative AI</div>
+      <div class="panel-heading">API Cost Calculator</div>
+    </div>
+
+      <div class="field-group">
+        <div class="field-label">Generation Count</div>
+      <div class="field-row">
+        <input
+          id="imageCountInput"
+          type="number"
+          class="number-input"
+          min="0"
+            step="1"
+          value="1"
+        />
+        <button class="stepper-btn" data-step="-1">−</button>
+        <button class="stepper-btn" data-step="1">+</button>
+      </div>
+    </div>
+
+      <div class="field-group">
+        <div class="field-label">Select Modalities</div>
+        <div class="checkbox-group">
+          <label class="checkbox-row">
+            <input id="promptCheckbox" type="checkbox" checked />
+            <span>AI text generation</span>
+          </label>
+          <label class="checkbox-row">
+            <input id="imageCheckbox" type="checkbox" />
+            <span>Generate images</span>
+          </label>
+          <label class="checkbox-row">
+            <input id="videoCheckbox" type="checkbox" />
+            <span>Generate videos from images</span>
+          </label>
+          <label class="checkbox-row">
+            <input id="avatarCheckbox" type="checkbox" />
+            <span>Generate avatar videos</span>
+          </label>
+          <label class="checkbox-row">
+            <input id="voiceCheckbox" type="checkbox" />
+            <span>Generate voice (text-to-speech)</span>
+          </label>
+          <label class="checkbox-row">
+            <input id="sttCheckbox" type="checkbox" />
+            <span>Transcribe audio (speech-to-text)</span>
+          </label>
+          <label class="checkbox-row">
+            <input id="musicCheckbox" type="checkbox" />
+            <span>Generate music (text-to-music)</span>
+          </label>
+          <label class="checkbox-row">
+            <input id="text3dCheckbox" type="checkbox" />
+            <span>Generate 3D models (text-to-3D)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="field-label">Quality Settings</div>        
+        <div class="quality-option">
+          <label class="quality-label">Text Model</label>
+          <select id="textModelSelect" class="quality-select">
+            <option value="fast">Fast (GPT-4o-mini/Flash)</option>
+            <option value="balanced" selected>Balanced (GPT-5/Gemini 2.5 Pro)</option>
+            <option value="advanced">Advanced (o3/o3-mini)</option>
+          </select>
+        </div>
+
+        <div class="quality-option">
+          <label class="quality-label">Image Resolution</label>
+          <select id="imageResolutionSelect" class="quality-select">
+            <option value="512">512×512</option>
+            <option value="1024" selected>1024×1024 (Standard)</option>
+            <option value="1024x1792">1024×1792 (Portrait)</option>
+            <option value="1792x1024">1792×1024 (Landscape)</option>
+          </select>
+        </div>
+
+        <div class="quality-option">
+          <label class="quality-label">Image Quality</label>
+          <select id="imageQualitySelect" class="quality-select">
+            <option value="standard" selected>Standard</option>
+            <option value="hd">HD (2x cost)</option>
+          </select>
+        </div>
+
+        <div class="quality-option">
+          <label class="quality-label">Video Duration</label>
+          <select id="videoDurationSelect" class="quality-select">
+            <option value="5" selected>5 seconds</option>
+            <option value="10">10 seconds</option>
+            <option value="30">30 seconds</option>
+            <option value="60">1 minute</option>
+          </select>
+        </div>
+
+        <div class="quality-option">
+          <label class="quality-label">Avatar Duration</label>
+          <select id="avatarDurationSelect" class="quality-select">
+            <option value="15">15 seconds</option>
+            <option value="30" selected>30 seconds</option>
+            <option value="60">1 minute</option>
+            <option value="120">2 minutes</option>
+          </select>
+        </div>
+
+        <div class="quality-option">
+          <label class="quality-label">Voice Quality</label>
+          <select id="voiceQualitySelect" class="quality-select">
+            <option value="standard" selected>Standard</option>
+            <option value="turbo">Turbo (faster)</option>
+            <option value="multilingual">Multilingual</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <i class="fa-solid fa-envelope"></i> 
+        <a href="mailto:hatsyshirtsy@gmail.com">Contact</a>
+      </div>
+  </aside>
+
+  <main class="right-panel">
+    <section class="summary-card">
+      <div class="summary-top-row">
+          <div class="summary-title">Estimate</div>
+          <div class="summary-total">
+            Grand total: <span id="grandTotal">$0.00</span>
+          </div>
+          <div class="summary-assets">
+            <span id="numberAssets">(0)</span> assets
+          </div>
+    </div>
+        <div class="summary-badges" id="summaryBadges"></div>
+        <div class="selected-providers" id="selectedProviders"></div>
+    </section>
+
+      <section class="modalities-grid" id="modalitiesGrid"></section>
+      
+      <div class="summary-note">updated Dec 2, 2025</div>
+      <button id="clearSelectionBtn" class="reset-btn">
+          Clear All
+        </button>
+  </main>
+</div>
+
+  <script type="module" src="app/main.js"></script>
+</body>
+</html>

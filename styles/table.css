@@ -1,0 +1,106 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-lg);
+  border-radius: var(--radius-base);
+  overflow: hidden;
+}
+
+thead {
+  background: var(--bg-thead);
+}
+
+th,
+td {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  border-bottom: 1px solid var(--border-solid);
+}
+
+th {
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-wide);
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+/* Interactive elements - Shared cursor */
+th.sortable,
+.select-checkbox {
+  cursor: pointer;
+}
+
+th.sortable {
+  user-select: none;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+th.sortable:hover,
+th.sorted {
+  color: var(--accent);
+}
+
+th.sortable:hover {
+  background: var(--border-hover);
+}
+
+th.sorted {
+  font-weight: 600;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr {
+  background: var(--bg-tbody);
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+tbody tr:hover {
+  background: var(--bg-hover);
+  transform: var(--transform-lift);
+  box-shadow: var(--shadow-hover);
+}
+
+.row-selected {
+  background: radial-gradient(circle at top left, var(--accent-soft), var(--bg-tbody-alt));
+  border-left: var(--space-2xs) solid var(--accent-strong);
+}
+
+/* Numeric cells - Shared tabular nums */
+.price-cell,
+.cost-cell {
+  font-variant-numeric: tabular-nums;
+}
+
+.provider-name-cell,
+.cost-cell {
+  font-weight: 500;
+}
+
+.cost-cell {
+  color: var(--accent);
+}
+
+/* Links - Shared hover to accent */
+.api-link {
+  font-size: var(--font-base);
+  color: var(--text-soft);
+  text-decoration: none;
+  border-bottom: var(--space-1) dashed var(--border-dashed);
+  padding-bottom: var(--space-1);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.api-link:hover {
+  color: var(--accent);
+  border-color: var(--accent-strong);
+}
+
+.select-checkbox {
+  accent-color: var(--accent);
+}
+

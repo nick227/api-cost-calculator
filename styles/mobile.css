@@ -1,0 +1,179 @@
+/**
+ * Mobile & Responsive Styles
+ * All mobile/tablet breakpoint styles centralized here
+ * Breakpoints: 920px (tablet), 768px (mobile)
+ */
+
+/* ============================================
+   TABLET LAYOUT (< 920px)
+   ============================================ */
+@media (max-width: 920px) {
+  /* Stack panels vertically */
+  .app-root {
+    flex-direction: column;
+    padding: var(--space-3xl);
+    gap: var(--space-3xl);
+  }
+
+  /* Left panel adjustments */
+  .left-panel {
+    position: static !important;
+    width: 100%;
+    max-width: 100%;
+    max-height: 50vh;
+  }
+  
+  /* Right panel adjustments */
+  .right-panel {
+    width: 100%;
+    padding-bottom: var(--space-4xl);
+  }
+  
+  /* Hide quality settings and contact for cleaner mobile UX */
+  .left-panel > div:nth-child(4),
+  .contact-row {
+    display: none;
+  }
+}
+
+/* ============================================
+   MOBILE LAYOUT (< 768px)
+   ============================================ */
+@media (max-width: 768px) {
+  /* Tighter spacing */
+  .app-root {
+    padding: var(--space-xl);
+    gap: var(--space-xl);
+  }
+  
+  /* Prevent flex overflow */
+  .left-panel,
+  .right-panel {
+    min-width: 0;
+    width: 100%;
+    flex-shrink: 0;
+  }
+  
+  /* Reduced padding on mobile */
+  .left-panel {
+    padding: var(--space-xl);
+  }
+  
+  /* Smaller summary total */
+  .summary-total {
+    font-size: var(--font-6xl);
+  }
+  
+  /* Smaller modality pills */
+  .modality-pill {
+    min-width: var(--size-pill-min);
+    font-size: var(--font-2xs);
+    padding: var(--space-2xs) var(--space-md);
+  }
+  
+  /* Prevent layout shift from dynamic content */
+  .summary-badges,
+  .selected-providers {
+    min-height: 0;
+  }
+  
+  /* Tighter spacing for field groups */
+  .field-group {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .checkbox-group {
+    gap: var(--space-2xs);
+  }
+  
+  /* ==========================================
+     MOBILE TABLE CARD LAYOUT
+     ========================================== */
+  
+  /* Remove table horizontal scroll */
+  .modality-table-wrapper {
+    overflow-x: visible;
+  }
+  
+  /* Stack table as blocks */
+  table, tbody {
+    display: block;
+  }
+  
+  /* Hide table headers */
+  thead {
+    display: none;
+  }
+  
+  /* Transform rows into cards */
+  tbody tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-xl);
+    border-radius: var(--radius-base);
+    border: 1px solid var(--border-subtle);
+    padding: var(--space-xl);
+    background: var(--bg-tbody);
+  }
+  
+  /* Disable hover effects on mobile */
+  tbody tr:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Stack cells as key-value pairs */
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) 0;
+    border: none;
+  }
+  
+  tbody td:last-child {
+    padding-bottom: 0;
+  }
+  
+  /* Checkbox cell at top with separator */
+  tbody td:first-child {
+    order: -1;
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: var(--space-sm);
+  }
+  
+  /* Add data labels before each value */
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: var(--font-xs);
+    letter-spacing: var(--letter-base);
+    color: var(--text-soft);
+    flex: 0 0 40%;
+  }
+  
+  /* Hide label for checkbox (first cell) */
+  tbody td:first-child::before {
+    display: none;
+  }
+  
+  /* Provider cell stacks vertically */
+  .provider-name-cell {
+    flex-direction: row;
+    align-items: flex-start !important;
+    gap: var(--space-sm);
+    justify-content: space-between;
+  }
+
+  .provider-name-cell::before {
+    display: none;
+  }
+  
+  /* Larger checkbox for touch targets */
+  .select-checkbox {
+    transform: scale(1.3);
+  }
+}
+

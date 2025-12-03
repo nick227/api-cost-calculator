@@ -1,0 +1,178 @@
+.left-panel {
+  flex: 0 0 25%;
+  min-width: 0; /* Prevent flex overflow */
+  background: var(--bg-panel-sidebar);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-4xl) var(--space-4xl) var(--space-5xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  position: sticky;
+  top: var(--space-3xl);
+  height: fit-content;
+  overflow-y: auto; /* Allow scroll if needed */
+}
+
+/* Panel Headers - Shared uppercase label style */
+.panel-title,
+.field-label {
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.panel-title {
+  font-size: var(--font-5xl);
+  letter-spacing: var(--letter-wider);
+  margin-bottom: var(--space-xs);
+}
+
+.panel-heading {
+  font-size: var(--font-6xl);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+/* Vertical flex containers - Shared pattern */
+.field-group,
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.field-group {
+  margin-bottom: var(--space-md);
+}
+
+.field-label {
+  font-size: var(--font-lg);
+  letter-spacing: var(--letter-base);
+}
+
+.field-description {
+  font-size: var(--font-md);
+  color: var(--text-soft);
+  opacity: 0.85;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* Input fields - Shared styling */
+.number-input,
+.stepper-btn {
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-input);
+  outline: none;
+}
+
+.number-input {
+  flex: 1;
+  padding: var(--pad-input);
+  border-radius: var(--radius-base);
+  color: var(--text-main);
+  font-size: var(--font-4xl);
+  transition: border var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.number-input:focus {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-focus);
+  background: var(--bg-input-focus);
+}
+
+.stepper-btn {
+  width: var(--size-btn-sm);
+  height: var(--size-btn-sm);
+  border-radius: var(--radius-full);
+  color: var(--text-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: var(--font-4xl);
+  transition: background var(--transition-fast), border var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.stepper-btn:hover {
+  background: var(--bg-input-hover);
+  border-color: var(--accent-strong);
+  color: var(--accent);
+  transform: var(--transform-lift);
+}
+
+.stepper-btn:active {
+  transform: translateY(0);
+}
+
+/* Interactive rows - Shared hover behavior */
+.checkbox-row,
+.stepper-btn,
+.reset-btn {
+  cursor: pointer;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-3xl);
+  color: var(--text-soft);
+  padding: var(--pad-tight);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.checkbox-row input {
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.checkbox-row:hover {
+  background: var(--bg-hover-light);
+  color: var(--text-main);
+}
+
+.hint-chip {
+  margin-top: var(--space-sm);
+  font-size: var(--font-base);
+  color: var(--text-soft);
+  background: var(--bg-hint);
+  border-radius: var(--radius-full);
+  padding: var(--space-xs) var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.hint-dot {
+  width: var(--size-dot);
+  height: var(--size-dot);
+  border-radius: var(--radius-full);
+  background: var(--accent);
+}
+
+.reset-btn {
+  margin-top: var(--space-lg);
+  padding: var(--pad-btn);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-soft);
+  font-size: var(--font-lg);
+  align-self: flex-start;
+  transition: background var(--transition-fast), color var(--transition-fast), border var(--transition-fast), transform var(--transition-fast);
+}
+
+.reset-btn:hover {
+  background: var(--bg-hover-alt);
+  border-color: var(--accent-strong);
+  color: var(--text-main);
+  transform: var(--transform-lift);
+}
+
