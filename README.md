@@ -2,6 +2,8 @@
 
 A comprehensive pricing calculator for AI multimedia generation APIs across text, image, video, avatar, and voice modalities.
 
+Demo: https://nick227.github.io/api-cost-calculator/
+
 ## 🚀 Features
 
 - **18 Providers** across 5 modalities
